@@ -1,0 +1,27 @@
+{
+  "name": "project-inventory-application",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RTJIL/Project-Inventory-Application.git"
+  },
+  "author": "artem",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/RTJIL/Project-Inventory-Application/issues"
+  },
+  "homepage": "https://github.com/RTJIL/Project-Inventory-Application#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "pg": "^8.16.3"
+  }
+}
