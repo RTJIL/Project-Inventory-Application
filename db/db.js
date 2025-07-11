@@ -1,9 +1,9 @@
 import { Pool } from "pg"
 
+import dotenv from "dotenv"
+dotenv.config()
+
 export const pool = new Pool({
-  host: "localhost",
-  user: "rtjil",
-  database: "top_inventory",
-  password: "125364",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
 })
