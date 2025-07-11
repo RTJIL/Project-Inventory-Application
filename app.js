@@ -3,7 +3,7 @@ import expressLayouts from "express-ejs-layouts"
 import { indexRouter } from "./routes/indexRouter.js"
 import path from "node:path"
 import dotenv from "dotenv"
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from "url"
 
 dotenv.config()
 
