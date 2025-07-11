@@ -1,0 +1,18 @@
+<!-- filtereGames.ejs -->
+
+<div class="games-container">
+    <% games.forEach(game => { %>
+        <div class="card">
+    <h3><%= game.title %></h3>
+    <p>
+      Genres: <%= (game.genres && game.genres.length) ? game.genres.join(", ") : "Not added" %>
+    </p>
+    <p>
+      Devs: <%= (game.devs && game.devs.length) ? game.devs.join(", ") : "Not added" %>
+    </p>
+    <!-- <form action="/<%= game.id %>/delete" method="POST">
+      <button type="submit">Delete</button>
+    </form> -->
+</div>
+  <% }) %>
+</div>

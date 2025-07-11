@@ -1,1 +1,7 @@
-<p>asdasdsadsadsa</p>
+<div class="devs-container">
+  <% devs.forEach(dev => { %>
+  <a href="/games-by-devs/<%= dev.name.toLowerCase() %>">
+    <%= dev.name ? dev.name : "not added" %>
+  </a>
+  <% }) %>
+</div>

@@ -1,0 +1,36 @@
+<!-- edit-game.ejs -->
+<div class="form">
+  <div style="margin-bottom: 2rem; font-size: 1.2rem">
+    Hold Ctrl (or Cmd) to select multiple options
+  </div>
+
+  <form action="/<%= game.id %>/edit" method="POST">
+    <label for="title">Game Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      required
+      autocomplete="off"
+      value="<%= game.title %>"
+    />
+
+    <label for="genres">Select Genres:</label>
+    <select name="genres[]" id="genres" multiple>
+      <% allGenres.forEach(genre => { %>
+      <option value="<%= genre.name %>" <%= game.genres?.includes(genre.name) ? 'selected' : '' %>>
+      <%= genre.name %>
+    </option>
+      <% } ) %>
+    </select>
+
+    <label for="devs">Select Developers:</label>
+    <select name="devs[]" id="devs" multiple>
+      <% allDevs.forEach(dev => { %>
+      <option value="<%= dev.name %>" <%= game.devs?.includes(dev.name) ? 'selected' : '' %>>
+      <%= dev.name %>
+    </select>
+    <% } ) %>
+    <button type="submit">Edit</button>
+  </form>
+</div>

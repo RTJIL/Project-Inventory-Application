@@ -1,0 +1,26 @@
+<div class="form">
+  <div style="margin-bottom: 2rem; font-size: 1.2rem">
+    Hold Ctrl (or Cmd) to select multiple options
+  </div>
+
+  <form action="/add-game" method="POST">
+    <label for="title">Game Title</label>
+    <input type="text" id="title" name="title" required autocomplete="off" />
+
+    <label for="genres">Select Genres:</label>
+    <select name="genres[]" id="genres" multiple>
+      <% genres.forEach(genre => { %>
+      <option value="<%= genre.name %>"><%= genre.name %></option>
+      <% } ) %>
+    </select>
+
+    <label for="devs">Select Developers:</label>
+    <select name="devs[]" id="devs" multiple>
+      <% devs.forEach(dev => { %>
+      <option value="<%= dev.name %>"><%= dev.name %></option>
+      <% } ) %>
+    </select>
+
+    <button type="submit">Add</button>
+  </form>
+</div>

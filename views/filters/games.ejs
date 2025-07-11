@@ -1,5 +1,25 @@
-<h2>Games List</h2>
-<ul>
-  <li>🎮 Game 1</li>
-  <li>🎮 Game 2</li>
-</ul>
+<!-- games.ejs -->
+<div class="games-container">
+  <% games.forEach(game => { %>
+  <div class="card">
+    <h3><%= game.title %></h3>
+    <p>
+      Genres: <%= (game.genres && game.genres.length) ? game.genres.join(", ") : "Not added" %>
+    </p>
+    <p>
+      Devs: <%= (game.devs && game.devs.length) ? game.devs.join(", ") : "Not added" %>
+    </p>
+    <form action="/<%= game.id %>/delete" method="POST">
+      <button
+        type="submit"
+        onclick="return confirm('Are you sure you want to delete this game?');"
+      >
+        Delete
+      </button>
+    </form>
+    <a href="/<%= game.id %>/edit">
+      <button>Edit</button>
+    </a>
+  </div>
+  <% }) %>
+</div>

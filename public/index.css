@@ -20,10 +20,109 @@ header h1 {
 }
 
 main {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
   font-size: 1.6rem;
+}
+
+main a {
+  text-decoration: none;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: white;
+}
+
+main a:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+main .games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+main .games-container button {
+  background-color: rgb(49, 48, 48);
+  color: white;
+  margin-right: 4px;
+
+  padding: 10px;
+  font-size: clamp(1rem, 2.5vw, 1rem);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+main .games-container button:hover {
+  border: 1px solid rgb(99, 99, 99);
+  background-color: rgb(63, 63, 63);
+  box-shadow: 0 2px 6px rgba(117, 117, 117, 0.04);
+}
+
+main .games-container .card,
+main .genres-container a,
+main .devs-container a {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: rgb(49, 48, 48);
+}
+
+main .games-container,
+main .genres-container,
+main .devs-container {
+  padding: 2rem 0 0 2rem;
+}
+
+main .genres-container,
+main .devs-container {
+  display: flex;
+  gap: 1.6rem;
+}
+
+main .form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 2rem;
+  justify-content: center;
+}
+
+main form {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: fit-content;
+}
+
+main form input,
+main form button,
+main form select {
+  padding: 10px;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: white;
+  background-color: rgb(39, 37, 37);
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+main form select {
+  height: clamp(140px, 2.5vw, 180px);
+}
+
+main form select option {
+  border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 4px;
+}
+
+main form button {
+  cursor: pointer;
 }
 
 aside {
@@ -31,6 +130,7 @@ aside {
   flex-direction: column;
   justify-content: center;
   padding: 5px;
+  gap: 3px;
 }
 
 aside,
@@ -50,6 +150,12 @@ aside a {
 }
 
 aside a:hover {
+  border: 1px solid rgb(99, 99, 99);
+  background-color: rgb(63, 63, 63);
+  box-shadow: 0 2px 6px rgba(117, 117, 117, 0.04);
+}
+
+aside a.active {
   border: 1px solid rgb(99, 99, 99);
   background-color: rgb(63, 63, 63);
   box-shadow: 0 2px 6px rgba(117, 117, 117, 0.04);
