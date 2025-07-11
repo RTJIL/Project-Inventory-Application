@@ -20,10 +20,14 @@ header h1 {
 }
 
 main {
-  flex: 1;
+  height: 780px;
   display: flex;
   flex-direction: column;
   font-size: 1.6rem;
+  overflow: auto;
+  overflow-y: auto; /* enables vertical scroll */
+  overflow-x: hidden; /* disables horizontal scroll */
+  padding: 10px;
 }
 
 main a {
