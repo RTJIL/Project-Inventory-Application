@@ -3,6 +3,9 @@ import expressLayouts from "express-ejs-layouts"
 import { indexRouter } from "./routes/indexRouter.js"
 import path from "node:path"
 
+import dotenv from "dotenv"
+dotenv.config()
+
 const app = express()
 
 export const __dirname = import.meta.dirname
@@ -22,7 +25,7 @@ app.set("layout", "layout")
 
 app.use("/", indexRouter)
 
-const PORT = 8000
+const PORT = process.env.PGPORT || 5432
 app.listen(PORT, () => {
   console.log("Server started on port: ", PORT)
 })
